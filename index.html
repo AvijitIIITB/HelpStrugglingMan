@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<!-- saved from url=(0239)https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&sp=r&sv=2025-07-05&sr=b&sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiseUp — You Are Not Alone</title>
+    <link href="./RiseUp — You Are Not Alone_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a2e;
+            --accent: #e94560;
+            --accent2: #0f3460;
+            --gold: #f5a623;
+            --light: #f0f0f5;
+            --white: #ffffff;
+            --text: #2c2c3a;
+            --muted: #6b6b80;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* ─── NAVBAR ─── */
+        nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(26,26,46,.95);
+            backdrop-filter: blur(10px);
+            padding: 16px 40px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        nav .logo { color: var(--white); font-weight: 900; font-size: 1.4rem; letter-spacing: 1px; }
+        nav .logo span { color: var(--accent); }
+        nav ul { list-style: none; display: flex; gap: 28px; }
+        nav ul li a {
+            color: #ccc; text-decoration: none; font-size: .9rem; font-weight: 600;
+            transition: color .3s;
+        }
+        nav ul li a:hover { color: var(--accent); }
+
+        /* ─── HERO ─── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; padding: 120px 20px 80px;
+            position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute; width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(233,69,96,.15), transparent 70%);
+            top: -100px; right: -100px; border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute; width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(15,52,96,.4), transparent 70%);
+            bottom: -50px; left: -50px; border-radius: 50%;
+        }
+        .hero h1 {
+            font-size: 3.8rem; font-weight: 900; color: var(--white);
+            line-height: 1.15; max-width: 800px; position: relative; z-index: 1;
+        }
+        .hero h1 span { color: var(--accent); }
+        .hero p {
+            color: #b0b0c8; font-size: 1.15rem; max-width: 600px;
+            margin: 24px auto 40px; position: relative; z-index: 1;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; z-index: 1; }
+        .btn {
+            padding: 14px 36px; border-radius: 50px; font-weight: 700; font-size: .95rem;
+            text-decoration: none; transition: all .3s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: #c7324d; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(233,69,96,.4); }
+        .btn-outline { border: 2px solid rgba(255,255,255,.3); color: #fff; background: transparent; }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+        /* ─── STATS BAR ─── */
+        .stats-bar {
+            display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+            padding: 50px 20px;
+            background: var(--white);
+            box-shadow: 0 4px 20px rgba(0,0,0,.05);
+        }
+        .stat { text-align: center; }
+        .stat h2 { font-size: 2.4rem; font-weight: 900; color: var(--accent); }
+        .stat p { font-size: .85rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* ─── SECTION BASE ─── */
+        section { padding: 90px 40px; }
+        .section-title {
+            text-align: center; margin-bottom: 60px;
+        }
+        .section-title h2 {
+            font-size: 2.4rem; font-weight: 900; color: var(--primary);
+        }
+        .section-title h2 span { color: var(--accent); }
+        .section-title p { color: var(--muted); max-width: 600px; margin: 12px auto 0; }
+
+        /* ─── WHY SECTION ─── */
+        .why { background: var(--white); }
+        .why-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; max-width: 1100px; margin: 0 auto;
+        }
+        .why-card {
+            background: var(--light); border-radius: 16px; padding: 36px;
+            transition: transform .3s, box-shadow .3s;
+        }
+        .why-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+        .why-card .icon { font-size: 2.4rem; margin-bottom: 16px; }
+        .why-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; }
+        .why-card p { color: var(--muted); font-size: .95rem; }
+
+        /* ─── PILLARS ─── */
+        .pillars { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #fff; }
+        .pillars .section-title h2 { color: #fff; }
+        .pillars .section-title p { color: #8888a8; }
+        .pillar-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; max-width: 1100px; margin: 0 auto;
+        }
+        .pillar-card {
+            background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08);
+            border-radius: 16px; padding: 40px; position: relative; overflow: hidden;
+            transition: transform .3s;
+        }
+        .pillar-card:hover { transform: translateY(-4px); }
+        .pillar-card .number {
+            font-size: 5rem; font-weight: 900; color: rgba(233,69,96,.15);
+            position: absolute; top: -10px; right: 16px;
+        }
+        .pillar-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; color: var(--gold); }
+        .pillar-card p { color: #b0b0c8; font-size: .95rem; }
+        .pillar-card ul { list-style: none; margin-top: 16px; }
+        .pillar-card ul li {
+            padding: 6px 0; color: #ccc; font-size: .9rem;
+            border-bottom: 1px solid rgba(255,255,255,.05);
+        }
+        .pillar-card ul li::before { content: '✦ '; color: var(--accent); }
+
+        /* ─── RESOURCES ─── */
+        .resources { background: var(--white); }
+        .resource-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px; max-width: 1100px; margin: 0 auto;
+        }
+        .resource-card {
+            border: 1px solid #e0e0ea; border-radius: 14px; padding: 28px;
+            transition: all .3s; background: #fff;
+        }
+        .resource-card:hover { border-color: var(--accent); box-shadow: 0 8px 30px rgba(233,69,96,.1); }
+        .resource-card .tag {
+            display: inline-block; padding: 4px 14px; border-radius: 20px;
+            font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 14px;
+        }
+        .tag-career { background: #e3f2fd; color: #1565c0; }
+        .tag-mental { background: #fce4ec; color: #c62828; }
+        .tag-social { background: #fff8e1; color: #f57f17; }
+        .tag-fitness { background: #e8f5e9; color: #2e7d32; }
+        .tag-finance { background: #f3e5f5; color: #7b1fa2; }
+        .resource-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .resource-card p { color: var(--muted); font-size: .9rem; margin-bottom: 14px; }
+        .resource-card a {
+            color: var(--accent); font-weight: 700; font-size: .9rem; text-decoration: none;
+        }
+        .resource-card a:hover { text-decoration: underline; }
+
+        /* ─── QUOTES ─── */
+        .quotes { background: var(--light); }
+        .quote-slider {
+            max-width: 800px; margin: 0 auto; text-align: center;
+        }
+        .quote-box {
+            background: var(--white); border-radius: 20px; padding: 50px 40px;
+            box-shadow: 0 8px 40px rgba(0,0,0,.06); margin-bottom: 20px;
+            display: none;
+        }
+        .quote-box.active { display: block; }
+        .quote-box blockquote {
+            font-size: 1.4rem; font-weight: 700; color: var(--primary);
+            line-height: 1.5; font-style: italic;
+        }
+        .quote-box cite { display: block; margin-top: 20px; color: var(--accent); font-size: .95rem; font-style: normal; font-weight: 600; }
+        .quote-nav { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+        .quote-dot {
+            width: 12px; height: 12px; border-radius: 50%;
+            background: #ccc; border: none; cursor: pointer; transition: background .3s;
+        }
+        .quote-dot.active { background: var(--accent); }
+
+        /* ─── DAILY CHALLENGE ─── */
+        .challenge {
+            background: linear-gradient(135deg, var(--accent), #c7324d);
+            text-align: center; color: #fff; padding: 80px 20px;
+        }
+        .challenge h2 { font-size: 2.2rem; font-weight: 900; margin-bottom: 12px; }
+        .challenge p { max-width: 500px; margin: 0 auto 30px; opacity: .9; }
+        .challenge-card {
+            background: rgba(255,255,255,.15); border-radius: 16px;
+            padding: 30px; max-width: 500px; margin: 0 auto;
+            backdrop-filter: blur(10px);
+        }
+        .challenge-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .challenge-card p { opacity: .85; }
+        #newChallenge { margin-top: 24px; background: #fff; color: var(--accent); }
+        #newChallenge:hover { background: var(--primary); color: #fff; }
+
+        /* ─── HABITS ─── */
+        .habits { background: var(--white); }
+        .habit-list {
+            max-width: 700px; margin: 0 auto;
+        }
+        .habit-item {
+            display: flex; align-items: center; gap: 16px;
+            padding: 18px 24px; border-radius: 12px;
+            background: var(--light); margin-bottom: 12px;
+            transition: all .3s; cursor: pointer;
+        }
+        .habit-item:hover { background: #e8e8f0; }
+        .habit-item .check {
+            width: 28px; height: 28px; border-radius: 50%;
+            border: 2px solid var(--accent); display: flex;
+            align-items: center; justify-content: center;
+            font-size: 14px; color: transparent; transition: all .3s;
+            flex-shrink: 0;
+        }
+        .habit-item.done .check { background: var(--accent); color: #fff; }
+        .habit-item.done span { text-decoration: line-through; opacity: .5; }
+        .habit-item span { font-weight: 600; }
+
+        /* ─── BOOKS ─── */
+        .books { background: var(--light); }
+        .book-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px; max-width: 1100px; margin: 0 auto;
+        }
+        .book-card {
+            background: #fff; border-radius: 14px; padding: 30px; text-align: center;
+            transition: transform .3s; box-shadow: 0 4px 16px rgba(0,0,0,.04);
+        }
+        .book-card:hover { transform: translateY(-4px); }
+        .book-card .book-icon { font-size: 3rem; margin-bottom: 12px; }
+        .book-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+        .book-card .author { color: var(--muted); font-size: .85rem; margin-bottom: 10px; }
+        .book-card p { font-size: .85rem; color: var(--muted); }
+
+        /* ─── EMERGENCY ─── */
+        .emergency {
+            background: var(--primary); color: #fff; text-align: center;
+            padding: 70px 20px;
+        }
+        .emergency h2 { font-size: 2rem; font-weight: 900; margin-bottom: 12px; }
+        .emergency p { color: #8888a8; max-width: 600px; margin: 0 auto 30px; }
+        .helpline-grid {
+            display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+        }
+        .helpline {
+            background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+            border-radius: 14px; padding: 24px 32px; min-width: 220px;
+        }
+        .helpline h4 { color: var(--gold); font-size: .95rem; margin-bottom: 4px; }
+        .helpline p { color: #ccc; font-size: 1.1rem; font-weight: 700; }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: #111125; color: #666; text-align: center;
+            padding: 30px; font-size: .85rem;
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.4rem; }
+            section { padding: 60px 20px; }
+            nav ul { display: none; }
+            .stats-bar { gap: 30px; }
+        }
+    </style>
+<script>bazadebezolkohpepadr="1101362420"</script><script type="text/javascript" src="./RiseUp — You Are Not Alone_files/41a574cf" defer=""></script></head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">Rise<span>Up</span></div>
+    <ul>
+        <li><a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#why">Why</a></li>
+        <li><a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#pillars">Pillars</a></li>
+        <li><a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#resources">Resources</a></li>
+        <li><a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#challenge">Challenge</a></li>
+        <li><a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#habits">Habits</a></li>
+        <li><a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#books">Books</a></li>
+        <li><a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#help">Help</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Your Comeback Story <span>Starts Today.</span></h1>
+    <p>Struggling with career setbacks and loneliness? You're not broken — you're in the building phase. This is your launchpad to reclaim purpose, confidence, and momentum.</p>
+    <div class="hero-buttons">
+        <a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#pillars" class="btn btn-primary">Start Your Journey</a>
+        <a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#help" class="btn btn-outline">Need Help Now?</a>
+    </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+    <div class="stat"><h2>73%</h2><p>Young men report feeling lost<br>at some point in their 20s</p></div>
+    <div class="stat"><h2>1 in 3</h2><p>Men don't have a close<br>friend to talk to</p></div>
+    <div class="stat"><h2>100%</h2><p>Of difficult seasons<br>are temporary</p></div>
+</div>
+
+<!-- WHY SECTION -->
+<section class="why" id="why">
+    <div class="section-title">
+        <h2>We Get It. <span>It's Hard.</span></h2>
+        <p>Modern life throws unique challenges at young men. Recognizing the struggle is the first step toward conquering it.</p>
+    </div>
+    <div class="why-grid">
+        <div class="why-card">
+            <div class="icon">💼</div>
+            <h3>Career Feels Impossible</h3>
+            <p>Rejections pile up. The job market feels rigged. You send 100 resumes and hear nothing. It's demoralizing — but it's not a reflection of your worth. Every rejection is a chance to learn something new. And you will succeed one day for sure!</p>
+        </div>
+        <div class="why-card">
+            <div class="icon">💔</div>
+            <h3>Loneliness &amp; Rejection</h3>
+            <p>Dating apps feel like a game you can't win. Social connections fade. The isolation is real and painful — but it doesn't define your future. You are destined to be with someone who is perfect for you. And its only a matter of time before you meet her. </p>
+        </div>
+        <div class="why-card">
+            <div class="icon">🧠</div>
+            <h3>Mental Fog &amp; No Direction</h3>
+            <p>When purpose disappears, every day feels the same. Motivation dies. But clarity returns when you start taking micro-actions. Once you celebrate your small wins the purpose comes back slowly</p>
+        </div>
+        <div class="why-card">
+            <div class="icon">😶</div>
+            <h3>"Man Up" Doesn't Help</h3>
+            <p>Society tells you to be strong but gives no roadmap. Suppressing emotions leads to burnout. Real strength is asking for help. Understanding your emotions is a gateway to your development. You are not alone! We are here to help!</p>
+        </div>
+        <div class="why-card">
+            <div class="icon">📱</div>
+            <h3>Comparison Trap</h3>
+            <p>Social media shows everyone winning except you. But those highlights reels hide the same struggles you face. Unplug and focus inward. Social media is designed to make you feel inferior. Don't take it very seriously!</p>
+        </div>
+        <div class="why-card">
+            <div class="icon">⏳</div>
+            <h3>Feeling Behind in Life</h3>
+            <p>Your friends seem ahead — married, promoted, thriving. But life isn't a race. Your timeline is yours, and late bloomers often bloom brightest.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 4 PILLARS -->
+<section class="pillars" id="pillars">
+    <div class="section-title">
+        <h2>The 4 Pillars of <span>Rebuilding</span></h2>
+        <p>Focus on these four areas and watch everything shift. Small daily wins compound into a transformed life.</p>
+    </div>
+    <div class="pillar-grid">
+        <div class="pillar-card">
+            <div class="number">01</div>
+            <h3>🏋️ Body — Move Daily</h3>
+            <p>Physical activity is the #1 antidepressant that's free and always available.</p>
+            <ul>
+                <li>Start with 15 min walks — no gym needed</li>
+                <li>Pushups, pullups, squats at home</li>
+                <li>Sleep 7-8 hours — non-negotiable</li>
+                <li>Cut processed food gradually</li>
+            </ul>
+        </div>
+        <div class="pillar-card">
+            <div class="number">02</div>
+            <h3>💰 Career — Build Skills</h3>
+            <p>Employment problems = solvable problems. The market rewards skills, not degrees.</p>
+            <ul>
+                <li>Learn one high-demand skill (coding, trade, sales)</li>
+                <li>Freelance while job hunting</li>
+                <li>Network — 80% of jobs come from connections</li>
+                <li>Apply to 5 jobs daily — make it a system</li>
+            </ul>
+        </div>
+        <div class="pillar-card">
+            <div class="number">03</div>
+            <h3>🤝 Social — Connect</h3>
+            <p>Loneliness is an epidemic. Building connection takes intention, not perfection.</p>
+            <ul>
+                <li>Join one local group or class</li>
+                <li>Reach out to one person weekly</li>
+                <li>Volunteer — purpose + people</li>
+                <li>Therapy or men's groups — no shame</li>
+            </ul>
+        </div>
+        <div class="pillar-card">
+            <div class="number">04</div>
+            <h3>🧭 Mind — Find Purpose</h3>
+            <p>Purpose isn't found — it's built. Through action, not waiting for inspiration.</p>
+            <ul>
+                <li>Journal 5 minutes each morning</li>
+                <li>Set one 90-day goal — write it down</li>
+                <li>Read 10 pages daily</li>
+                <li>Limit social media to 30 min/day</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="resources" id="resources">
+    <div class="section-title">
+        <h2>Free <span>Resources</span> To Level Up</h2>
+        <p>Curated tools, courses, and platforms — all free or affordable — to help you build momentum.</p>
+    </div>
+    <div class="resource-grid">
+        <div class="resource-card">
+            <span class="tag tag-career">Career</span>
+            <h3>Google Career Certificates</h3>
+            <p>Industry-recognized certificates in IT, Data Analytics, UX Design, and more. No degree required. Scholarships available.</p>
+            <a href="https://grow.google/certificates/" target="_blank">Explore →</a>
+        </div>
+        <div class="resource-card">
+            <span class="tag tag-career">Career</span>
+            <h3>FreeCodeCamp</h3>
+            <p>Learn to code for free. Full-stack development, Python, JavaScript — with certifications and a supportive community.</p>
+            <a href="https://www.freecodecamp.org/" target="_blank">Start Learning →</a>
+        </div>
+        <div class="resource-card">
+            <span class="tag tag-mental">Mental Health</span>
+            <h3>BetterHelp / 7 Cups</h3>
+            <p>Affordable online therapy and free peer support. Talking to someone is the bravest thing you can do.</p>
+            <a href="https://www.7cups.com/" target="_blank">Talk to Someone →</a>
+        </div>
+        <div class="resource-card">
+            <span class="tag tag-mental">Mental Health</span>
+            <h3>Headspace / Insight Timer</h3>
+            <p>Guided meditation and mindfulness — even 5 minutes a day reduces anxiety and sharpens focus.</p>
+            <a href="https://insighttimer.com/" target="_blank">Try Meditation →</a>
+        </div>
+        <div class="resource-card">
+            <span class="tag tag-fitness">Fitness</span>
+            <h3>Darebee — No-Equipment Workouts</h3>
+            <p>Hundreds of free workout programs you can do at home. No gym, no excuses. Just start.</p>
+            <a href="https://darebee.com/" target="_blank">Get Moving →</a>
+        </div>
+        <div class="resource-card">
+            <span class="tag tag-social">Social Skills</span>
+            <h3>Meetup.com</h3>
+            <p>Find local groups for any interest — hiking, coding, board games. Real connections, not apps.</p>
+            <a href="https://www.meetup.com/" target="_blank">Find Groups →</a>
+        </div>
+        <div class="resource-card">
+            <span class="tag tag-finance">Finance</span>
+            <h3>Khan Academy — Personal Finance</h3>
+            <p>Free courses on budgeting, investing, and building financial literacy from scratch.</p>
+            <a href="https://www.khanacademy.org/" target="_blank">Learn Finance →</a>
+        </div>
+        <div class="resource-card">
+            <span class="tag tag-career">Resume</span>
+            <h3>Harvard Resume Template</h3>
+            <p>Clean, professional resume templates and career advice from Harvard's Office of Career Services.</p>
+            <a href="https://careerservices.fas.harvard.edu/resources/bullet-point-resume-template/" target="_blank">Build Resume →</a>
+        </div>
+        <div class="resource-card">
+            <span class="tag tag-social">Community</span>
+            <h3>r/DecidingToBeBetter</h3>
+            <p>A supportive Reddit community of people working on self-improvement. Share wins, get advice, feel seen.</p>
+            <a href="https://www.reddit.com/r/DecidingToBeBetter/" target="_blank">Join Community →</a>
+        </div>
+    </div>
+</section>
+
+<!-- DAILY QUOTES -->
+<section class="quotes" id="quotes">
+    <div class="section-title">
+        <h2>Words That <span>Hit Different</span></h2>
+        <p>When motivation is low, the right words at the right time can reignite the fire.</p>
+    </div>
+    <div class="quote-slider">
+        <div class="quote-box">
+            <blockquote>"A year from now, you'll wish you started today."</blockquote>
+            <cite>— Karen Lamb</cite>
+        </div>
+        <div class="quote-box">
+            <blockquote>"You don't have to be great to start, but you have to start to be great."</blockquote>
+            <cite>— Zig Ziglar</cite>
+        </div>
+        <div class="quote-box">
+            <blockquote>"The man who moves a mountain begins by carrying away small stones."</blockquote>
+            <cite>— Confucius</cite>
+        </div>
+        <div class="quote-box active">
+            <blockquote>"Fall seven times, stand up eight."</blockquote>
+            <cite>— Japanese Proverb</cite>
+        </div>
+        <div class="quote-box">
+            <blockquote>"Your current situation is not your final destination. The best is yet to come."</blockquote>
+            <cite>— Zig Ziglar</cite>
+        </div>
+        <div class="quote-box">
+            <blockquote>"Hardships often prepare ordinary people for an extraordinary destiny."</blockquote>
+            <cite>— C.S. Lewis</cite>
+        </div>
+        <div class="quote-nav" id="quoteDots"><button class="quote-dot"></button><button class="quote-dot"></button><button class="quote-dot"></button><button class="quote-dot active"></button><button class="quote-dot"></button><button class="quote-dot"></button></div>
+    </div>
+</section>
+
+<!-- DAILY CHALLENGE -->
+<section class="challenge" id="challenge">
+    <h2>⚡ Today's Challenge</h2>
+    <p>One small action. That's all it takes. Do this before midnight and you've already won today.</p>
+    <div class="challenge-card">
+        <h3 id="challengeTitle">📞 Call Someone You Haven't Talked To</h3>
+        <p id="challengeDesc">A friend, a family member, an old classmate. Reconnect. It takes 2 minutes.</p>
+    </div>
+    <button class="btn" id="newChallenge" onclick="randomChallenge()">Give Me Another One</button>
+</section>
+
+<!-- DAILY HABITS TRACKER -->
+<section class="habits" id="habits">
+    <div class="section-title">
+        <h2>Daily <span>Habit Tracker</span></h2>
+        <p>Check off these non-negotiables. Small disciplines = massive results over time.</p>
+    </div>
+    <div class="habit-list">
+        <div class="habit-item" onclick="this.classList.toggle(&#39;done&#39;)">
+            <div class="check">✓</div>
+            <span>🌅 Wake up before 8 AM</span>
+        </div>
+        <div class="habit-item" onclick="this.classList.toggle(&#39;done&#39;)">
+            <div class="check">✓</div>
+            <span>💧 Drink 8 glasses of water</span>
+        </div>
+        <div class="habit-item" onclick="this.classList.toggle(&#39;done&#39;)">
+            <div class="check">✓</div>
+            <span>🏃 Exercise for 20+ minutes</span>
+        </div>
+        <div class="habit-item" onclick="this.classList.toggle(&#39;done&#39;)">
+            <div class="check">✓</div>
+            <span>📖 Read for 15 minutes</span>
+        </div>
+        <div class="habit-item" onclick="this.classList.toggle(&#39;done&#39;)">
+            <div class="check">✓</div>
+            <span>📝 Apply to jobs or learn a skill for 1 hour</span>
+        </div>
+        <div class="habit-item" onclick="this.classList.toggle(&#39;done&#39;)">
+            <div class="check">✓</div>
+            <span>🗣️ Talk to one person (call, text, in person)</span>
+        </div>
+        <div class="habit-item" onclick="this.classList.toggle(&#39;done&#39;)">
+            <div class="check">✓</div>
+            <span>📵 No social media after 9 PM</span>
+        </div>
+        <div class="habit-item" onclick="this.classList.toggle(&#39;done&#39;)">
+            <div class="check">✓</div>
+            <span>✍️ Write 3 things you're grateful for and appreciate yourself</span>
+        </div>
+    </div>
+</section>
+
+<!-- RECOMMENDED BOOKS -->
+<section class="books" id="books">
+    <div class="section-title">
+        <h2>Books That <span>Change Lives</span></h2>
+        <p>Each of these has helped millions of men find clarity, purpose, and strength.</p>
+    </div>
+    <div class="book-grid">
+        <div class="book-card">
+            <div class="book-icon">📘</div>
+            <h4>Atomic Habits</h4>
+            <p class="author">James Clear</p>
+            <p>Small changes, remarkable results. The ultimate guide to building good habits and breaking bad ones.</p>
+        </div>
+        <div class="book-card">
+            <div class="book-icon">📕</div>
+            <h4>Can't Hurt Me</h4>
+            <p class="author">David Goggins</p>
+            <p>From poverty and abuse to becoming the toughest man alive. Raw, real, and life-changing.</p>
+        </div>
+        <div class="book-card">
+            <div class="book-icon">📗</div>
+            <h4>Man's Search for Meaning</h4>
+            <p class="author">Viktor Frankl</p>
+            <p>Finding purpose in the worst suffering imaginable. If he found meaning in Auschwitz, you can find it too.</p>
+        </div>
+        <div class="book-card">
+            <div class="book-icon">📙</div>
+            <h4>12 Rules for Life</h4>
+            <p class="author">Jordan Peterson</p>
+            <p>Practical wisdom for navigating chaos. Stand up straight, clean your room, aim at something meaningful.</p>
+        </div>
+        <div class="book-card">
+            <div class="book-icon">📓</div>
+            <h4>The Subtle Art of Not Giving a F*ck</h4>
+            <p class="author">Mark Manson</p>
+            <p>Stop chasing positivity. Embrace struggle and choose what's worth caring about.</p>
+        </div>
+        <div class="book-card">
+            <div class="book-icon">📒</div>
+            <h4>Meditations</h4>
+            <p class="author">Marcus Aurelius</p>
+            <p>Ancient Stoic wisdom from a Roman emperor. Timeless lessons on resilience and inner peace.</p>
+        </div>
+        <div class="book-card">
+            <div class="book-icon">📔</div>
+            <h4>The Compound Effect</h4>
+            <p class="author">Darren Hardy</p>
+            <p>Small, smart choices + consistency + time = radical difference. The math of success.</p>
+        </div>
+        <div class="book-card">
+            <div class="book-icon">📖</div>
+            <h4>No More Mr. Nice Guy</h4>
+            <p class="author">Robert Glover</p>
+            <p>Stop people-pleasing and start living authentically. A game-changer for relationships and self-respect.</p>
+        </div>
+    </div>
+</section>
+
+<!-- EMERGENCY -->
+<section class="emergency" id="help">
+    <h2>🚨 Need Help Right Now?</h2>
+    <p>If you're in crisis or thinking about self-harm, please reach out. You matter more than you know. These are free, confidential, and available 24/7.</p>
+    <div class="helpline-grid">
+        <div class="helpline">
+            <h4>🇮🇳 iCall (India)</h4>
+            <p>9152987821</p>
+        </div>
+        <div class="helpline">
+            <h4>🇮🇳 Vandrevala Foundation</h4>
+            <p>1860-2662-345</p>
+        </div>
+        <div class="helpline">
+            <h4>🇮🇳 AASRA</h4>
+            <p>9820466726</p>
+        </div>
+        <div class="helpline">
+            <h4>🌍 Crisis Text Line</h4>
+            <p>Text HOME to 741741</p>
+        </div>
+        <div class="helpline">
+            <h4>🌍 Befrienders Worldwide</h4>
+            <p>befrienders.org</p>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>Built with ❤️ for every man fighting silent battles. You are not alone. | <a href="https://storage.abby.abb.com/elabbyinternalassistant/conversations/d2ade02e-2e34-45e0-8807-6922dd41f096/output/riseup_motivation_v1.html?se=2026-05-12T21%3A27%3A51Z&amp;sp=r&amp;sv=2025-07-05&amp;sr=b&amp;sig=M8FN8/BEk0pfC2fiJN4QFkYPN5TXLzZhxFq3TcuD3rg%3D#help">Get Help</a></p>
+    <p style="margin-top:8px; opacity:.6;">© 2026 RiseUp — This is a free resource. Share it with someone who needs it.</p>
+</footer>
+
+<script>
+    // ─── QUOTES SLIDER ───
+    const quotes = document.querySelectorAll('.quote-box');
+    const dotsContainer = document.getElementById('quoteDots');
+    let currentQuote = 0;
+
+    quotes.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.classList.add('quote-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => showQuote(i);
+        dotsContainer.appendChild(dot);
+    });
+
+    function showQuote(n) {
+        quotes.forEach(q => q.classList.remove('active'));
+        document.querySelectorAll('.quote-dot').forEach(d => d.classList.remove('active'));
+        quotes[n].classList.add('active');
+        document.querySelectorAll('.quote-dot')[n].classList.add('active');
+        currentQuote = n;
+    }
+
+    setInterval(() => {
+        showQuote((currentQuote + 1) % quotes.length);
+    }, 5000);
+
+    // ─── DAILY CHALLENGES ───
+    const challenges = [
+        { title: "🚶 Walk for 30 Minutes", desc: "No music, no phone. Just you and your thoughts. Observe the world around you. Talk to yourself positively." },
+        { title: "📧 Send 2 Job Applications", desc: "Tailor each resume. Write a 3-line cover letter. Focus on the requirements. Position yourself in the best possible way." },
+        { title: "💪 Do 50 Pushups (Any Pace)", desc: "Break them into sets. 10 x 5. Just get them done. Your body will thank you. dopamine increases => Increased motivation" },
+        { title: "📞 Call Someone You Haven't Talked To", desc: "A friend, a family member, an old classmate. Reconnect. It takes 2 minutes. Ask them - what's good about me?" },
+        { title: "📖 Read One Chapter of a Book", desc: "Fiction or non-fiction. Physical or digital. Feed your mind something valuable." },
+        { title: "🧹 Clean Your Room Completely", desc: "Make your bed, organize your desk, take out the trash. When you free up space, your mind reclaim space and clarity." },
+        { title: "✍️ Write Down 3 Goals for the Next 90 Days", desc: "Be specific. 'Get a job' → 'Apply to 100 companies in IT by September.'" },
+        { title: "🍳 Cook a Healthy Meal From Scratch", desc: "Rice, veggies, protein. No delivery. Taking care of yourself starts with what you eat." },
+        { title: "📵 No Social Media for 24 Hours", desc: "Delete the apps temporarily. Notice how much time and mental energy you reclaim. Stay away from negative feeds temporarily." },
+        { title: "🗣️ Give a Genuine Compliment to 3 People", desc: "Coworker, stranger, family. Spreading positivity rewires your own brain. Express kindness to people. Remember, you are kind, you are good and you are beautiful." },
+        { title: "🧘 Meditate for 10 Minutes", desc: "Sit quietly. Focus on breathing. When thoughts come, don't try to repress and control them. Just let them pass and focus on your goal and motivation." },
+        { title: "💻 Learn Something New", desc: "A YouTube tutorial, a free course, a new language or a musical instrument! Growth is the antidote to stagnation." },
+    ];
+
+    function randomChallenge() {
+        const c = challenges[Math.floor(Math.random() * challenges.length)];
+        document.getElementById('challengeTitle').textContent = c.title;
+        document.getElementById('challengeDesc').textContent = c.desc;
+    }
+    randomChallenge();
+
+    // ─── SMOOTH SCROLL ───
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
+
+<noscript><img src="https://storage.abby.abb.com/akam/13/pixel_41a574cf?a=dD0xMjU5MGE0ZTJlMWUwNDAwZDVlMjMwYzU0MTUxZjEyMjZhOTkyZmNhJmpzPW9mZg==" style="visibility: hidden; position: absolute; left: -999px; top: -999px;" /></noscript>
+
+</body></html>
